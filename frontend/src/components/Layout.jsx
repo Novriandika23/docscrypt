@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
           <div className="flex h-16 items-center justify-between px-4">
             <DocsCryptLogo
               className="h-8 w-8"
-              textClassName="ml-2 text-xl font-bold text-gray-900"
+              textClassName="ml-2 text-xl font-semibold text-gray-900 tracking-tight"
             />
             <button
               onClick={() => setSidebarOpen(false)}
@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
+                  className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md tracking-normal ${
                     isActive(item.href)
                       ? 'bg-primary-100 text-primary-800 border-r-2 border-primary-500'
                       : 'text-gray-600 hover:bg-primary-50 hover:text-primary-700'
@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
           <div className="flex items-center h-16 px-4">
             <DocsCryptLogo
               className="h-8 w-8"
-              textClassName="ml-2 text-xl font-bold text-gray-900"
+              textClassName="ml-2 text-xl font-semibold text-gray-900 tracking-tight"
             />
           </div>
           <nav className="flex-1 space-y-1 px-2 py-4">
@@ -95,7 +95,7 @@ const Layout = ({ children }) => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
+                  className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md tracking-normal ${
                     isActive(item.href)
                       ? 'bg-primary-100 text-primary-800 border-r-2 border-primary-500'
                       : 'text-gray-600 hover:bg-primary-50 hover:text-primary-700'
@@ -117,7 +117,7 @@ const Layout = ({ children }) => {
                 </div>
               </div>
               <div className="ml-3 flex-1">
-                <p className="text-sm font-medium text-gray-900">{user?.username}</p>
+                <p className="text-sm font-medium text-gray-900 tracking-normal">{user?.username}</p>
                 <p className="text-xs text-gray-500">{user?.email}</p>
               </div>
               <button

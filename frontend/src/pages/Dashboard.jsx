@@ -242,7 +242,7 @@ const Dashboard = () => {
       <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg p-6 mb-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-white">Beranda File</h1>
+            <h1 className="text-2xl font-semibold text-white tracking-tight">Beranda File</h1>
             <p className="text-primary-100">Kelola file terenkripsi Anda dengan aman</p>
           </div>
           <div className="hidden md:block">
@@ -281,7 +281,7 @@ const Dashboard = () => {
               </div>
               <div className="ml-4 flex-1">
                 <p className="text-sm font-medium text-gray-500 mb-1">Total File</p>
-                <p className="text-3xl font-bold text-gray-900">{files.length}</p>
+                <p className="text-3xl font-semibold text-gray-900 tracking-tight">{files.length}</p>
               </div>
             </div>
           </div>
@@ -297,7 +297,7 @@ const Dashboard = () => {
               </div>
               <div className="ml-4 flex-1">
                 <p className="text-sm font-medium text-gray-500 mb-1">Terenkripsi</p>
-                <p className="text-3xl font-bold text-gray-900">
+                <p className="text-3xl font-semibold text-gray-900 tracking-tight">
                   {files.filter(f => f.is_encrypted).length}
                 </p>
               </div>
@@ -315,7 +315,7 @@ const Dashboard = () => {
               </div>
               <div className="ml-4 flex-1">
                 <p className="text-sm font-medium text-gray-500 mb-1">Belum Terenkripsi</p>
-                <p className="text-3xl font-bold text-gray-900">
+                <p className="text-3xl font-semibold text-gray-900 tracking-tight">
                   {files.filter(f => !f.is_encrypted).length}
                 </p>
               </div>
@@ -327,7 +327,7 @@ const Dashboard = () => {
       {/* Files Table */}
       <div className="card">
         <div className="card-header">
-          <h3 className="text-lg font-medium text-gray-900">File Anda</h3>
+          <h3 className="text-lg font-semibold text-gray-900 tracking-tight">File Anda</h3>
         </div>
         <div className="card-content">
           {files.length === 0 ? (
