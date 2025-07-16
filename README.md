@@ -1,168 +1,192 @@
-# 🔐 DocsCrypt - File Encryption System
+# 🔐 DocsCrypt Frontend
 
-Aplikasi web untuk mengunggah, mengenkripsi, dan mendekripsi file Word (.docx) dan Excel (.xlsx) menggunakan kombinasi algoritma **Aria-128-CBC** dan **Affine Cipher**.
+Modern React.js web application for secure document encryption and decryption using ARIA-128-CBC and Affine Cipher algorithms.
 
-## 🚀 Fitur Utama
+![DocsCrypt Logo](public/logo-tanpa-bg.png)
 
-- ✅ **Upload File**: Mendukung file Word (.docx) dan Excel (.xlsx)
-- 🔐 **Enkripsi Ganda**: Kombinasi Aria-128-CBC + Affine Cipher
-- 🔓 **Dekripsi Aman**: Restore file asli dengan integritas 100%
-- 👥 **Multi User**: Sistem autentikasi dan manajemen user
-- 📊 **Dashboard**: Interface modern untuk manajemen file
-- 🧪 **Testing**: Built-in testing untuk validasi algoritma
-- 🗄️ **Database**: Metadata tersimpan aman di MySQL
+## ✨ Features
 
-## 🏗️ Teknologi
+### 🔒 **Security Features**
+- **Dual-Layer Encryption**: ARIA-128-CBC + Affine Cipher
+- **Secure File Upload**: Multi-format support (DOCX, XLSX, PDF, TXT, PPT)
+- **Real-time Encryption Status**: Visual feedback for all operations
+- **Protected Routes**: JWT-based authentication
+- **Secure File Download**: Encrypted file delivery
 
-### Backend
-- **Node.js** dengan **Hapi.js** framework
-- **MySQL** untuk database
-- **Aria-128-CBC** (menggunakan AES-128-CBC equivalent)
-- **Affine Cipher** untuk lapisan enkripsi tambahan
-- **JWT** untuk autentikasi
-- **Multer** untuk file upload
+### 🎨 **User Interface**
+- **Modern Design**: Clean, professional interface with Tailwind CSS
+- **Responsive Layout**: Works perfectly on desktop and mobile
+- **File Type Icons**: Color-coded icons for different file types
+- **Progress Indicators**: Real-time upload and encryption progress
+- **Interactive Dashboard**: Comprehensive file management
 
-### Frontend
-- **React** dengan **Vite**
-- **Tailwind CSS** untuk styling
-- **Axios** untuk API calls
-- **React Router** untuk routing
-- **React Hot Toast** untuk notifications
+### 📱 **User Experience**
+- **Intuitive Navigation**: Easy-to-use interface for all users
+- **File Management**: Upload, encrypt, decrypt, and download files
+- **User Authentication**: Secure login and registration system
+- **Error Handling**: Comprehensive error messages and validation
 
-## 🔧 Setup Development
+## 🛠️ Tech Stack
 
-### Prerequisites
-- Node.js (v16 atau lebih baru)
-- MySQL Server
-- Git
+### **Core Technologies**
+- **React 18** - Modern React with hooks and functional components
+- **Vite** - Lightning-fast build tool and dev server
+- **React Router DOM** - Client-side routing and navigation
 
-### 1. Clone Repository
+### **Styling & UI**
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Beautiful, customizable icons
+- **PostCSS** - CSS processing and optimization
+
+### **HTTP & API**
+- **Axios** - Promise-based HTTP client for API communication
+- **JWT Handling** - Secure token-based authentication
+
+### **Development Tools**
+- **ESLint** - Code linting and quality assurance
+- **Hot Module Replacement** - Instant development feedback
+
+## 🚀 Quick Start
+
+### **Prerequisites**
+- Node.js 18+ and npm/yarn
+- DocsCrypt Backend API running on port 3001
+
+### **Installation**
+
+1. **Clone the repository:**
 ```bash
-git clone <repository-url>
-cd project-docscrypt
-```
-
-### 2. Setup Backend
-```bash
-cd backend
-npm install
-```
-
-### 3. Setup Database
-```bash
-# Buat database MySQL
-mysql -u root -p
-CREATE DATABASE docscrypt_db;
-exit
-
-# Setup tables dan test user
-node setup_database.js
-```
-
-### 4. Konfigurasi Environment
-```bash
-# Copy dan edit file environment
-cp .env.example .env
-
-# Edit .env dengan konfigurasi Anda:
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASSWORD=your_mysql_password
-DB_NAME=docscrypt_db
-PORT=3001
-JWT_SECRET=your_super_secret_jwt_key
-```
-
-### 5. Setup Frontend
-```bash
-cd ../frontend
-npm install
-```
-
-### 6. Jalankan Aplikasi
-```bash
-# Terminal 1: Backend
-cd backend
-npm run dev
-
-# Terminal 2: Frontend
+git clone https://github.com/Novriandika23/docscrypt.git
+cd docscrypt
+git checkout frontend
 cd frontend
+```
+
+2. **Install dependencies:**
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Start development server:**
+```bash
 npm run dev
+# or
+yarn dev
 ```
 
-Aplikasi akan berjalan di:
-- **Frontend**: http://localhost:5173
-- **Backend**: http://localhost:3001
+4. **Open your browser:**
+```
+http://localhost:5173
+```
 
-## 🧪 Testing
+## 📁 Project Structure
 
-### Test Algoritma Enkripsi
+```
+frontend/
+├── public/                 # Static assets
+│   ├── logo-tanpa-bg.png  # Main logo
+│   ├── docscrypt-logo.svg # SVG logo
+│   └── vite.svg           # Vite icon
+├── src/
+│   ├── components/        # Reusable components
+│   │   ├── Layout.jsx     # Main app layout
+│   │   ├── ProtectedRoute.jsx # Route protection
+│   │   └── DocsCryptLogo.jsx  # Logo component
+│   ├── pages/             # Page components
+│   │   ├── Dashboard.jsx  # File management dashboard
+│   │   ├── Upload.jsx     # File upload interface
+│   │   ├── Decrypt.jsx    # File decryption interface
+│   │   ├── Login.jsx      # User authentication
+│   │   └── Register.jsx   # User registration
+│   ├── services/          # API services
+│   │   └── api.js         # HTTP client configuration
+│   ├── App.jsx            # Main app component
+│   ├── main.jsx           # Application entry point
+│   └── index.css          # Global styles
+├── package.json           # Dependencies and scripts
+├── vite.config.js         # Vite configuration
+├── tailwind.config.js     # Tailwind CSS configuration
+└── README.md              # This file
+```
+
+## 🎯 Available Scripts
+
 ```bash
-cd backend
-node test_encryption.js
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+
+# Production
+npm run build        # Create optimized production build
+npm run preview      # Preview the production build locally
 ```
 
-### Test Complete Flow
-```bash
-cd backend
-node test_complete_flow.js
+## 🔧 Configuration
+
+### **API Configuration**
+Update the API base URL in `src/services/api.js`:
+```javascript
+const API_BASE_URL = 'http://localhost:3001/api';
 ```
 
-### Test via Frontend
-1. Buka http://localhost:5173
-2. Login dengan: `username: testuser`, `password: password123`
-3. Kunjungi halaman "Encryption Test" untuk test algoritma
-4. Upload file .docx/.xlsx di halaman "Upload File"
+## 📱 Pages & Features
 
-## 🔐 Cara Kerja Enkripsi
+### **🏠 Dashboard**
+- File list with encryption status
+- Upload new files
+- Download encrypted/decrypted files
+- Delete files
+- File type indicators with colors
 
-### Proses Enkripsi
-1. **Input**: File asli (.docx/.xlsx)
-2. **Step 1**: Transformasi dengan Affine Cipher
-   - Formula: `E(x) = (ax + b) mod m`
-   - Parameter: a=5, b=8, m=256
-3. **Step 2**: Enkripsi dengan Aria-128-CBC
-   - Algoritma: AES-128-CBC (equivalent)
-   - Key: 128-bit
-   - IV: Random 16 bytes
-4. **Output**: File terenkripsi + metadata
+### **📤 Upload**
+- Drag & drop file upload
+- Multiple file format support
+- Real-time upload progress
+- Automatic encryption after upload
 
-### Proses Dekripsi
-1. **Input**: File terenkripsi + metadata
-2. **Step 1**: Dekripsi dengan Aria-128-CBC
-3. **Step 2**: Reverse transformasi Affine Cipher
-   - Formula: `D(y) = a^(-1)(y - b) mod m`
-4. **Output**: File asli yang dipulihkan
+### **🔓 Decrypt**
+- Select encrypted files
+- Enter decryption password
+- Download decrypted files
+- Decryption status feedback
 
-### Keamanan
-- **Double Encryption**: Dua lapisan enkripsi untuk keamanan maksimal
-- **Random IV**: Setiap enkripsi menggunakan IV yang berbeda
-- **SHA-256 Checksum**: Validasi integritas file
-- **Secure Storage**: File asli dihapus setelah enkripsi
+### **🔐 Authentication**
+- User registration and login
+- JWT token management
+- Protected route access
+- Secure session handling
 
-## 📁 Struktur Proyek
+## 🎨 UI Components
 
-```
-project-docscrypt/
-├── backend/
-│   ├── src/
-│   │   ├── config/          # Konfigurasi database
-│   │   ├── routes/          # API endpoints
-│   │   ├── services/        # Business logic
-│   │   │   └── encryption/  # Algoritma enkripsi
-│   │   └── utils/           # Utilities
-│   ├── uploads/             # File upload sementara
-│   ├── encrypted/           # File terenkripsi
-│   └── test_files/          # File untuk testing
-├── frontend/
-│   ├── src/
-│   │   ├── components/      # React components
-│   │   ├── pages/           # Halaman aplikasi
-│   │   └── services/        # API services
-│   └── public/
-├── database/
-│   └── schema.sql           # Database schema
-└── README.md
-```
+### **File Type Icons**
+- 📊 **Excel** (XLSX, XLS, CSV) - Green icons
+- 📄 **Word** (DOCX, DOC) - Blue icons
+- 📕 **PDF** - Red icons
+- 📝 **Text** (TXT) - Gray icons
+- 📊 **PowerPoint** (PPTX, PPT) - Orange icons
 
+### **Status Indicators**
+- 🔒 **Encrypted** - Green badge with lock icon
+- 🔓 **Decrypted** - Blue badge with unlock icon
+- ⏳ **Processing** - Yellow badge with spinner
+
+## 🔗 API Integration
+
+The frontend communicates with the DocsCrypt backend API:
+
+- **Authentication**: `/api/auth/login`, `/api/auth/register`
+- **File Upload**: `/api/files/upload`
+- **File Encryption**: `/api/encryption/encrypt`
+- **File Decryption**: `/api/encryption/decrypt`
+- **File Management**: `/api/files/list`, `/api/files/delete`
+
+## 🙏 Acknowledgments
+
+- React.js team for the amazing framework
+- Vite team for the blazing-fast build tool
+- Tailwind CSS for the utility-first CSS framework
+- Lucide React for beautiful icons
