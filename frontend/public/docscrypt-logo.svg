@@ -1,0 +1,61 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="matrixPattern" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#064e3b"/>
+      <circle cx="3" cy="3" r="0.8" fill="#34d399" opacity="0.7"/>
+      <circle cx="1" cy="1" r="0.4" fill="#6ee7b7" opacity="0.5"/>
+      <circle cx="5" cy="2" r="0.3" fill="#a7f3d0" opacity="0.6"/>
+      <circle cx="2" cy="5" r="0.5" fill="#6ee7b7" opacity="0.4"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Shield Background with subtle shadow -->
+  <path d="M100 25 L155 45 L155 105 Q155 145 100 175 Q45 145 45 105 L45 45 Z"
+        fill="url(#shieldGradient)"
+        stroke="#ffffff"
+        stroke-width="3"
+        filter="url(#glow)"/>
+
+  <!-- Document/File Icon Background -->
+  <rect x="75" y="85" width="50" height="60" rx="6"
+        fill="#ffffff"
+        stroke="#1f2937"
+        stroke-width="2"/>
+
+  <!-- Matrix Pattern Background (representing encryption) -->
+  <rect x="78" y="88" width="44" height="25"
+        fill="url(#matrixPattern)"
+        rx="3"/>
+
+  <!-- Document Lines -->
+  <line x1="82" y1="120" x2="118" y2="120" stroke="#6b7280" stroke-width="2"/>
+  <line x1="82" y1="127" x2="115" y2="127" stroke="#6b7280" stroke-width="2"/>
+  <line x1="82" y1="134" x2="110" y2="134" stroke="#6b7280" stroke-width="2"/>
+
+  <!-- Padlock Overlay -->
+  <rect x="90" y="100" width="20" height="15" rx="3"
+        fill="#1f2937"
+        opacity="0.9"/>
+
+  <!-- Padlock Shackle -->
+  <path d="M95 100 Q95 92 100 92 Q105 92 105 100"
+        fill="none"
+        stroke="#1f2937"
+        stroke-width="3"/>
+
+  <!-- Keyhole -->
+  <circle cx="100" cy="107" r="2" fill="#ffffff"/>
+  <rect x="99" y="107" width="2" height="4" fill="#ffffff"/>
+</svg>
