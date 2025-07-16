@@ -1,12 +1,235 @@
-# React + Vite
+# 🔐 DocsCrypt Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern React.js web application for secure document encryption and decryption using ARIA-128-CBC and Affine Cipher algorithms.
 
-Currently, two official plugins are available:
+![DocsCrypt Logo](public/logo-tanpa-bg.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+### 🔒 **Security Features**
+- **Dual-Layer Encryption**: ARIA-128-CBC + Affine Cipher
+- **Secure File Upload**: Multi-format support (DOCX, XLSX, PDF, TXT, PPT)
+- **Real-time Encryption Status**: Visual feedback for all operations
+- **Protected Routes**: JWT-based authentication
+- **Secure File Download**: Encrypted file delivery
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🎨 **User Interface**
+- **Modern Design**: Clean, professional interface with Tailwind CSS
+- **Responsive Layout**: Works perfectly on desktop and mobile
+- **File Type Icons**: Color-coded icons for different file types
+- **Progress Indicators**: Real-time upload and encryption progress
+- **Interactive Dashboard**: Comprehensive file management
+
+### 📱 **User Experience**
+- **Intuitive Navigation**: Easy-to-use interface for all users
+- **File Management**: Upload, encrypt, decrypt, and download files
+- **User Authentication**: Secure login and registration system
+- **Error Handling**: Comprehensive error messages and validation
+
+## 🛠️ Tech Stack
+
+### **Core Technologies**
+- **React 18** - Modern React with hooks and functional components
+- **Vite** - Lightning-fast build tool and dev server
+- **React Router DOM** - Client-side routing and navigation
+
+### **Styling & UI**
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Beautiful, customizable icons
+- **PostCSS** - CSS processing and optimization
+
+### **HTTP & API**
+- **Axios** - Promise-based HTTP client for API communication
+- **JWT Handling** - Secure token-based authentication
+
+### **Development Tools**
+- **ESLint** - Code linting and quality assurance
+- **Hot Module Replacement** - Instant development feedback
+
+## 🚀 Quick Start
+
+### **Prerequisites**
+- Node.js 18+ and npm/yarn
+- DocsCrypt Backend API running on port 3001
+
+### **Installation**
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/Novriandika23/docscrypt.git
+cd docscrypt
+git checkout frontend
+cd frontend
+```
+
+2. **Install dependencies:**
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Start development server:**
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. **Open your browser:**
+```
+http://localhost:5173
+```
+
+## 📁 Project Structure
+
+```
+frontend/
+├── public/                 # Static assets
+│   ├── logo-tanpa-bg.png  # Main logo
+│   ├── docscrypt-logo.svg # SVG logo
+│   └── vite.svg           # Vite icon
+├── src/
+│   ├── components/        # Reusable components
+│   │   ├── Layout.jsx     # Main app layout
+│   │   ├── ProtectedRoute.jsx # Route protection
+│   │   └── DocsCryptLogo.jsx  # Logo component
+│   ├── pages/             # Page components
+│   │   ├── Dashboard.jsx  # File management dashboard
+│   │   ├── Upload.jsx     # File upload interface
+│   │   ├── Decrypt.jsx    # File decryption interface
+│   │   ├── Login.jsx      # User authentication
+│   │   └── Register.jsx   # User registration
+│   ├── services/          # API services
+│   │   └── api.js         # HTTP client configuration
+│   ├── App.jsx            # Main app component
+│   ├── main.jsx           # Application entry point
+│   └── index.css          # Global styles
+├── package.json           # Dependencies and scripts
+├── vite.config.js         # Vite configuration
+├── tailwind.config.js     # Tailwind CSS configuration
+└── README.md              # This file
+```
+
+## 🎯 Available Scripts
+
+```bash
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+
+# Production
+npm run build        # Create optimized production build
+npm run preview      # Preview the production build locally
+```
+
+## 🔧 Configuration
+
+### **API Configuration**
+Update the API base URL in `src/services/api.js`:
+```javascript
+const API_BASE_URL = 'http://localhost:3001/api';
+```
+
+### **Environment Variables**
+Create `.env.local` for local development:
+```env
+VITE_API_URL=http://localhost:3001/api
+VITE_APP_NAME=DocsCrypt
+```
+
+## 📱 Pages & Features
+
+### **🏠 Dashboard**
+- File list with encryption status
+- Upload new files
+- Download encrypted/decrypted files
+- Delete files
+- File type indicators with colors
+
+### **📤 Upload**
+- Drag & drop file upload
+- Multiple file format support
+- Real-time upload progress
+- Automatic encryption after upload
+
+### **🔓 Decrypt**
+- Select encrypted files
+- Enter decryption password
+- Download decrypted files
+- Decryption status feedback
+
+### **🔐 Authentication**
+- User registration and login
+- JWT token management
+- Protected route access
+- Secure session handling
+
+## 🎨 UI Components
+
+### **File Type Icons**
+- 📊 **Excel** (XLSX, XLS, CSV) - Green icons
+- 📄 **Word** (DOCX, DOC) - Blue icons
+- 📕 **PDF** - Red icons
+- 📝 **Text** (TXT) - Gray icons
+- 📊 **PowerPoint** (PPTX, PPT) - Orange icons
+
+### **Status Indicators**
+- 🔒 **Encrypted** - Green badge with lock icon
+- 🔓 **Decrypted** - Blue badge with unlock icon
+- ⏳ **Processing** - Yellow badge with spinner
+
+## 🔗 API Integration
+
+The frontend communicates with the DocsCrypt backend API:
+
+- **Authentication**: `/api/auth/login`, `/api/auth/register`
+- **File Upload**: `/api/files/upload`
+- **File Encryption**: `/api/encryption/encrypt`
+- **File Decryption**: `/api/encryption/decrypt`
+- **File Management**: `/api/files/list`, `/api/files/delete`
+
+## 🚀 Deployment
+
+### **Build for Production**
+```bash
+npm run build
+```
+
+### **Deploy to Netlify/Vercel**
+1. Connect your GitHub repository
+2. Set build command: `npm run build`
+3. Set publish directory: `dist`
+4. Add environment variables if needed
+
+### **Deploy to Traditional Hosting**
+1. Run `npm run build`
+2. Upload `dist/` folder contents to your web server
+3. Configure server for SPA routing
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push to branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Novriandika23**
+- GitHub: [@Novriandika23](https://github.com/Novriandika23)
+- Repository: [DocsCrypt](https://github.com/Novriandika23/docscrypt)
+
+## 🙏 Acknowledgments
+
+- React.js team for the amazing framework
+- Vite team for the blazing-fast build tool
+- Tailwind CSS for the utility-first CSS framework
+- Lucide React for beautiful icons
