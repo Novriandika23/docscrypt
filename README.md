@@ -2,8 +2,6 @@
 
 Modern React.js web application for secure document encryption and decryption using ARIA-128-CBC and Affine Cipher algorithms.
 
-![DocsCrypt Logo](public/logo-tanpa-bg.png)
-
 ## ✨ Features
 
 ### 🔒 **Security Features**
